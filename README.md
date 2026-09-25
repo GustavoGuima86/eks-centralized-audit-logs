@@ -26,7 +26,7 @@ Mode; non-production retention can use lifecycle expiration.
 
 ```text
 environments/                 Reusable deployment root; local state by default
-audits_logs_aws/               Spoke-side subscription filter and alarm module
+remote_module_audits_logs_aws/ Spoke-side module published for remote Git use
 modules/
   alerting/                    SNS topic, target selection, cross-account policy
   alert_notifier/              Shared webhook/API notifier for Slack, Chat, Teams, Asana
@@ -119,14 +119,15 @@ retention, set `enable_object_lock = true` and configure the retention period.
 
 ## Spoke account setup
 
-Each spoke runs `audits_logs_aws/` in the same Terraform configuration as its
-EKS cluster. The cluster must have control-plane audit logging enabled. This
-module creates a subscription filter and forwarding-inactivity alarm; the EKS
-module remains responsible for its CloudWatch log group.
+Each spoke calls the `remote_module_audits_logs_aws` module from the Git
+repository in the same Terraform configuration as its EKS cluster. The
+cluster must have control-plane audit logging enabled. This module creates a
+subscription filter and forwarding-inactivity alarm; the EKS module remains
+responsible for its CloudWatch log group.
 
 ```hcl
 module "audit_log_forwarding" {
-  source = "../path-to-this-folder/audits_logs_aws"
+  source = "git::https://github.com/GustavoGuima86/eks-centralized-audit-logs.git//remote_module_audits_logs_aws?ref=main"
 
   cluster_name            = var.cluster_name
   destination_arn         = var.audit_log_destination_arn
@@ -137,8 +138,9 @@ module "audit_log_forwarding" {
 Supply `destination_arn` from `log_destination_arns["<cluster-label>"]` and
 `central_alert_topic_arn` from `sns_topic_arn`. Apply the receiving account
 first so its destination policy allows the spoke account to subscribe and its
-SNS topic policy allows the spoke alarm to publish. The spoke module is local
-and does not require a private Git repository reference.
+SNS topic policy allows the spoke alarm to publish. The Git repository must
+be accessible to the spoke account's Terraform runner. Pin `ref` to a release
+tag or commit SHA for reproducible deployments instead of tracking `main`.
 
 ## Querying
 

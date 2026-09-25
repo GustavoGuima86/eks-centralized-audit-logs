@@ -1,4 +1,4 @@
-# EKS audit log forwarding module
+# Remote EKS audit log forwarding module
 
 Spoke-side Terraform module that forwards one EKS cluster's Kubernetes
 control-plane audit events to a receiving AWS account and raises an alarm if
@@ -21,7 +21,7 @@ topic policy must permit this account to publish.
 
 ```hcl
 module "audit_log_forwarding" {
-  source = "../path-to-this-folder/audits_logs_aws"
+  source = "git::https://github.com/GustavoGuima86/eks-centralized-audit-logs.git//remote_module_audits_logs_aws?ref=main"
 
   cluster_name            = var.cluster_name
   destination_arn         = var.audit_log_destination_arn

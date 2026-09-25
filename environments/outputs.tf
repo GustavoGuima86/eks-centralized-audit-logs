@@ -24,7 +24,7 @@ output "cloudwatch_destination_role_arn" {
 }
 
 output "log_destination_arns" {
-  description = "Map of cluster_name => CloudWatch Logs destination ARN. Each spoke account's audits_logs_aws module `destination_arn` variable should be set to the value corresponding to its own cluster."
+  description = "Map of cluster_name => CloudWatch Logs destination ARN. Set the remote_module_audits_logs_aws module's `destination_arn` to the value corresponding to its cluster."
   value       = { for name, pipeline in module.audit_pipeline : name => pipeline.log_destination_arn }
 }
 

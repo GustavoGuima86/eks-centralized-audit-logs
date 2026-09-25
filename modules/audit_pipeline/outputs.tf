@@ -24,7 +24,7 @@ output "log_destination_name" {
 }
 
 output "log_destination_arn" {
-  description = "ARN of the CloudWatch Logs destination the spoke account subscribes to (this is the value the spoke account's audits_logs_aws module needs as destination_arn)."
+  description = "ARN of the CloudWatch Logs destination the spoke account subscribes to (this is the value the remote_module_audits_logs_aws module needs as destination_arn)."
   value       = aws_cloudwatch_log_destination.this.arn
 }
 
