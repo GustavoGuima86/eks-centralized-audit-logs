@@ -1,0 +1,10 @@
+# Terraform local working data and state
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+*.tfplan
+crash.log
+
+# Python bytecode
+__pycache__/
+*.py[cod]

@@ -1,0 +1,10 @@
+{
+    "Messages": [
+        {
+            "MessageId": "10bd5bbb-c662-4b6c-a1d1-a676a5740c13",
+            "ReceiptHandle": "AQEB9TDbJetDDEjMapnhGLKAB7uYqc58c8+KOEY3R1lfZKkAPQ/4Y/Wk2AgBx1QqBCsHI4CppTw6hE9r2jcAOso6Yj9pNdSmQ/NDkBmpjOInQZ4RrqIREAoOWpxsfgV4CrMvYRqpxvlKh0/zmDwrC0lXey70h3MHO4Y8jrh6TO+aKl/POHkLz95YStp3GUHf1Loeo5fssNSY3olGI/BYwrJDpWJfhrcx82Cpc8vRpixNydmdzpLdTZTchm4bvQWQjk1BVAKbQfD7Xlp1mRQMS/uOlKdqz9vyzPqHEx/siDskdqyL7HXPhxjb+1PiTeTDV+x8nvZNNcu6cQTxa/t6YM8YwE5i7qXteb+Ll3SJpnqwqrk17QWkvR3qgd0b9s0kuQEDFRU+8dJe/YzOE4znV5uw4GqJk6ME6mlsiM+sIzqWQbI=",
+            "MD5OfBody": "a9020f3226e5a3e0d10e8d1d2d229b69",
+            "Body": "{\"Records\":[{\"eventVersion\":\"2.6\",\"eventSource\":\"aws:s3\",\"awsRegion\":\"eu-central-1\",\"eventTime\":\"2026-09-10T14:45:04.279Z\",\"eventName\":\"ObjectCreated:Put\",\"userIdentity\":{\"principalId\":\"AWS:AROASO2YAV6I5VPPX74N7:AWSFirehoseToS3\"},\"requestParameters\":{\"sourceIPAddress\":\"10.20.7.82\"},\"responseElements\":{\"x-amz-request-id\":\"B5AF90F9Z2W3RRND\",\"x-amz-id-2\":\"ZBSuQmwYeN6Ii3zCcI714rcAP1sopsNIxS0D1Aft4SNhOjuXfOLfkXxnCvC6i6LfTKK06mS0jPKHgyBxVcj6UaV3lMfMiVZg\"},\"s3\":{\"s3SchemaVersion\":\"1.0\",\"configurationId\":\"tf-s3-lambda-20260910143714828600000001\",\"bucket\":{\"name\":\"audit-logs-devinnoon-474064328470\",\"ownerIdentity\":{\"principalId\":\"AKJIUEHUB6MMR\"},\"arn\":\"arn:aws:s3:::audit-logs-devinnoon-474064328470\"},\"object\":{\"key\":\"raw/cluster%3Ddevinnoon/year%3D2026/month%3D09/day%3D10/hour%3D14/audit-logs-devinnoon-474064328470-4-2026-09-10-14-30-04-f14b3b03-2af2-4052-8d6d-ce454e91365f\",\"size\":11150497,\"eTag\":\"092d409ded8209f89babe34584c3d985\",\"versionId\":\"Pkuhn.B5HFrKJMUFvXirP68MYcVtusQj\",\"sequencer\":\"006AA2C2701E5B03FC\"}}}]}"
+        }
+    ]
+}
